@@ -6,7 +6,7 @@ using namespace std;
 const int n = 3;
 
 
-bool binarySearch(int row[], int target) {
+bool search(int row[], int target) {
     int left = 0;
     int right = n - 1;
 
@@ -27,10 +27,10 @@ bool binarySearch(int row[], int target) {
 }
 
 
-bool findNumberInMatrix(int matrix[n][n], int target) {
-  
+bool number(int matrix[n][n], int target) {
+
     for (int i = 0; i < n; ++i) {
-        if (binarySearch(matrix[i], target)) {
+        if (search(matrix[i], target)) {
             return true;
         }
     }
@@ -39,7 +39,7 @@ bool findNumberInMatrix(int matrix[n][n], int target) {
 }
 
 int main() {
-    int matrix[n][n] = {
+    int array[n][n] = {
         {1, 2, 3},
         {4, 5, 6},
         {7, 8, 9}
@@ -48,7 +48,7 @@ int main() {
     int target;
     cout << "Введите искомое число";
     cin >> target;
-    if (findNumberInMatrix(matrix, target)) {
+    if (number(array, target)) {
         cout << "Число " << target << " найдено в матрице." << endl;
     }
     else {
